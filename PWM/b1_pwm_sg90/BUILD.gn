@@ -1,0 +1,24 @@
+import("//device/rockchip/rk2206/sdk_liteos/board.gni")
+
+static_library("sg90_example") {
+  sources = [
+    "sg90_example.c",
+    "src/sg90.c",
+  ]
+
+  include_dirs = [
+    "//utils/native/lite/include",
+    "//base/iot_hardware/peripheral/interfaces/kits",
+    "//device/rockchip/rk2206/adapter/include",
+    "//device/rockchip/hardware/lib/hal/inc",
+    "//device/rockchip/rk2206/sdk_liteos/board/include",
+    "//device/rockchip/hardware/lib/CMSIS/Device/RK2206/Include",
+    "//third_party/musl/porting/liteos_m/kernel/include",
+    "include",
+  ]
+
+  deps = [
+    "//device/rockchip/hardware:hardware",
+    "//kernel/liteos_m/kal/posix",
+  ]
+}
